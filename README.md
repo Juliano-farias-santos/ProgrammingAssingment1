@@ -1,5 +1,4 @@
-
-
+#First functions in R using for-loops.
 
 
 
@@ -82,5 +81,5 @@
         k <- k + 1
     }
     print(v)
-}
+    }
 
