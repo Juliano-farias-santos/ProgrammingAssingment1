@@ -1,5 +1,5 @@
 # First-functions-in-R
-A compilation of my first functions in R, with for-loops.
+#A compilation of my first functions in R, with for-loops.
 
 
 pollutantmean <- function(directory, x, id){
