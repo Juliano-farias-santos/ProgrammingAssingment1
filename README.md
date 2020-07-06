@@ -1,8 +1,12 @@
-# First-functions-in-R
-#A compilation of my first functions in R, with for-loops.
 
 
-pollutantmean <- function(directory, x, id){
+
+
+
+
+
+	pollutantmean <- function(directory, x, id){
+
     fl <- list.files(directory, full.names = TRUE) 
     #cria um objeto com o path dos arquivos csv,
     d <- data.frame()
@@ -13,16 +17,20 @@ pollutantmean <- function(directory, x, id){
     #com a ajuda de um for-loop, usei a função rbind(colar linhas) para colar linha de uma data.frame com outras,
     mean(d[,x], na.rm = TRUE)
     #média de acordo com a coluna selecionada. 
-}
+	}
 
 
-complete <- function(directory, id){
+
+
+
+	complete <- function(directory, id){
+
     fl <- list.files(directory, full.names = TRUE) 
     d <- data.frame()
     for(i in id){
         d <- rbind(d, read.csv(fl[i]))
     }
-    
+	
     bad <- is.na(d$sulfate & d$nitrate)
     e <- d[!bad,]
     #removi todos os na do arquivo,
@@ -44,10 +52,10 @@ complete <- function(directory, id){
     x <- data.frame(id, complete.case = v)
     x
     #resultado em data frame.
-}
+	}
 
 
-corr <- function(directory, t) {
+	corr <- function(directory, t) {
     fl <- list.files(directory, full.names = TRUE)
     id <- cases[cases$complete.case > t, "id"]
     #cases é um arquivo que contem o id e o complete.case(número de observações sem na's),
